@@ -2,6 +2,7 @@
 services: iot-hub 
 platforms: java
 author: azure-iot-sdks
+modified by croe10
 ---
 
 # Azure IoT Samples for Java
@@ -21,3 +22,15 @@ If you run into any issues with these samples, please file an issue on our main 
 
 - [azure-iot-sdk-java](https://github.com/Azure/azure-iot-sdk-java): contains the source code for Azure IoT Java SDK.
 - [Azure IoT Hub Documentation](https://docs.microsoft.com/azure/iot-hub/)
+
+## Running
+- Change the variable 'iotHubConnectionString'   to the string obtained by running 'az iot hub show-connection-string --hub-name mg-test-hub' from the azure cloud console
+- Change the variable 'deviceId' to the device name that you are sending to. 
+eg.     'public static final String deviceId = "CamRaspPiEmulator";'
+
+- build with 'mvn clean package'
+- run with 'java -jar target/back-end-application-1.0.0-with-deps.jar'
+
+- This sends a message to the iotHub with the method 'AutonomousVehicleMethod' and the payload
+{method:nudge}
+
